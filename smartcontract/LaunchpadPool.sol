@@ -54,8 +54,11 @@ contract LaunchpadPool is ILaunchpadPool, HederaTokenService  {
         // TODO: require fund conditions
 
         // transfer tokens to pool
-        HederaTokenService.transferToken(poolToken, address(this), msg.sender, amount);
-
+        int response = HederaTokenService.transferToken(poolToken, address(this), msg.sender, amount);
+        if (response != HederaResponseCodes.SUCCESS) {
+            revert ("Transfer Failed");
+        }
+        
         return true;
     }
 
@@ -67,9 +70,12 @@ contract LaunchpadPool is ILaunchpadPool, HederaTokenService  {
 
         // TODO: require withdraw conditions
 
-        // transfer tokens to pool
-        HederaTokenService.transferToken(poolToken, address(this), msg.sender, amount);
-
+        // transfer investment tokens to pool owner
+        int response = HederaTokenService.transferToken(quoteToken, msg.sender, address(this), amount);
+        if (response != HederaResponseCodes.SUCCESS) {
+            revert ("Transfer Failed");
+        }
+        
         return true;
     }
 
@@ -94,9 +100,8 @@ contract LaunchpadPool is ILaunchpadPool, HederaTokenService  {
         // update total bought amount
         funds[msg.sender] += amount;
 
-        // transfer tokens to sender
-        int response = HederaTokenService.transferToken(quoteToken, msg.sender, address(this), amount);
-
+        // transfer investment tokens to pool
+        int response = HederaTokenService.transferToken(quoteToken, address(this), msg.sender, amount);
         if (response != HederaResponseCodes.SUCCESS) {
             revert ("Transfer Failed");
         }
@@ -119,9 +124,8 @@ contract LaunchpadPool is ILaunchpadPool, HederaTokenService  {
         // update total claimed amount
         claims[msg.sender] += amount;
 
-        // transfer tokens to sender
+        // transfer pool tokens to sender
         int response = HederaTokenService.transferToken(poolToken, msg.sender, address(this), amount);
-
         if (response != HederaResponseCodes.SUCCESS) {
             revert ("Transfer Failed");
         }
