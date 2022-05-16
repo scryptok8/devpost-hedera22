@@ -10,7 +10,7 @@ Set up the .env.to.fill :
 
 ### Install the lib
 Run the following command to install the required libs 
-```npm install````
+```npm install```
 
 ### Deploy the smart contract
 Run the following command to deploy the Hedera Launchpad factory and mint an initial supply of Hedera Launchpad token to your account
@@ -19,7 +19,7 @@ Run the following command to deploy the Hedera Launchpad factory and mint an ini
 ## IDO PHASES
 An IDO can be described as a succession of 8 phases 
 
-### 1.CREATION 
+### 1. CREATION 
 A user ( Project creator ) can create an IDO ( or Pool ).
 
 - 1 : Choose IDO schedule 
@@ -41,25 +41,25 @@ The project creator define the IDO settings :
 - 3 : Create IDO ( or Pool )
 Project creator must pay for the creation fee
 
-### 2.REGISTRATION
+### 2. REGISTRATION
 Investors can register for the IDO during the registration period
 
-### 3.SALE START
+### 3. SALE START
 Purchase are allowed, investors can buy their token allocation during the sale period. Invested tokens are locked into the IDO escrow
 
-### 4.SALE FCFS
+### 4. SALE FCFS
 Investors can buy remaining tokens without allocation limit ( last 30 minutes of the IDO if funded project tokens are still remaining in the pool )
 
-### 5.SALE END
+### 5. SALE END
 No more purchase is allowed
 
-### 6.FUNDING
+### 6. FUNDING
 Project creator must fund the IDO pool with the full amount of sold token
 
-### 7.WITHDRAWING
+### 7. WITHDRAWING
 Project creator can withdraw the raised funds
 
-### 8.CLAIMING
+### 8. CLAIMING
 Investors can claim the project token allocation their bought during the sale ( according to the token vesting rule )
 
 
