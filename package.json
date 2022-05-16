@@ -1,0 +1,16 @@
+{
+  "name": "hedera22",
+  "version": "1.0.0",
+  "description": "A launchpad for Heldera blockchain.",
+  "main": "deploy.js",
+  "scripts": {
+    "deploy": "node deploy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hashgraph/sdk": "^2.13.1",
+    "dotenv": "^16.0.1"
+  }
+}
