@@ -58,7 +58,7 @@ async function main() {
 
     //Create a token to interact with
     const createToken =  new TokenCreateTransaction()
-            .setTokenName("HBAR LAUNCHPAD")
+            .setTokenName("HEDERA LAUNCHPAD")
             .setTokenSymbol("HPAD")
             .setTokenType(TokenType.FungibleCommon)
             .setTreasuryAccountId(treasuryAccountId)
@@ -74,7 +74,7 @@ async function main() {
     const tokenId = await (await submitTokenTx.getReceipt(client)).tokenId;
 
     //Log the token ID
-    console.log("The new HBAR LAUNCHPAD TOKEN (HPAD) ID is " +tokenId);
+    console.log("The new HEDERA LAUNCHPAD TOKEN (HPAD) ID is " +tokenId);
 
     //Create a file on Hedera and store the hex-encoded bytecode
     const fileCreateTx = new FileCreateTransaction()
@@ -111,7 +111,7 @@ async function main() {
     //Log the smart contract ID
     console.log("The smart contract ID is " + newContractId);
 
-    //Associate the token to an account using the HBAR LAUNCHPAD contract
+    //Associate the token to an account using the HEDERA LAUNCHPAD contract
     const associateToken = new ContractExecuteTransaction()
         //The contract to call
         .setContractId(newContractId)
