@@ -1,7 +1,7 @@
-# HEDERA PAD
+# HEDERA LAUNCHPAD
 A launchpad for Hedera blockchain. 
 
-## DEPLOY THE PAD 
+## DEPLOY THE LAUNCHPAD 
  
 ### Set up the .env file
 Set up the .env.to.fill :
